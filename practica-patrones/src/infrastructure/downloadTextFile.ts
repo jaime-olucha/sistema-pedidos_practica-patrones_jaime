@@ -1,4 +1,4 @@
-import type { ITextFilePayload } from '../../domain/order/interfaces/ITextFilePayload';
+import type { ITextFilePayload } from '../domain/interfaces/ITextFilePayload';
 
 export const downloadTextFile = ({ filename, content }: ITextFilePayload): void => {
     const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
