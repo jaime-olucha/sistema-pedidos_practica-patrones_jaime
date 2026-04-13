@@ -26,7 +26,7 @@ export class TextFileOrderObserver implements IOrderObserver {
             content += `${line.kind}:   ${line.amount.toFixed(2)}€${percentage}\n`;
         });
 
-        content += `${'TOTAL FINAL'.padEnd(20)} ${total.toFixed(2).padStart(10)}€\n`;
+        content += `TOTAL FINAL:    ${total.toFixed(2)}€\n`;
 
         this.saveTextFile({
             filename: `pedido_${order.id}.txt`,
