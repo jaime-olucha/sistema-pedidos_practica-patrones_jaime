@@ -6,16 +6,16 @@ import type { IOrderBreakdownLine } from "../interfaces/IOrderBreakdownLine";
 import { OrderDecorator } from "./OrderDecorator";
 
 export class ShippingDecorator extends OrderDecorator {
-    private readonly shippingPrice: number;
+    private readonly shippingValue: number;
 
-    constructor(order: IOrder, shippingPrice: number) {
+    constructor(order: IOrder, shippingValue: number) {
         super(order);
 
-        if (shippingPrice < ORDER_CONFIG.MINIMUM_VALUE) {
+        if (shippingValue < ORDER_CONFIG.MINIMUM_VALUE) {
             throw new Error(ORDER_ERROR_MESSAGES.INVALID_SHIPPING_PRICE);
         }
 
-        this.shippingPrice = shippingPrice;
+        this.shippingValue = shippingValue;
     }
 
     public override getTotal(): number {
@@ -38,6 +38,6 @@ export class ShippingDecorator extends OrderDecorator {
     }
 
     private calculateShippingAmount(): number {
-        return this.shippingPrice;
+        return this.shippingValue;
     }
 }
