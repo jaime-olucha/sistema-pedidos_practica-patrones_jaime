@@ -1,4 +1,4 @@
-import type { OrderConfirmedNotifier } from '../../domain/order/observers/OrderConfirmedNotifier';
+import type { OrderConfirmedNotifier } from '../../domain/observers/OrderConfirmedNotifier';
 import type { IOrder } from '../../domain/interfaces/IOrder';
 import type { IOrderBreakdownLine } from '../../domain/interfaces/IOrderBreakdownLine';
 
